@@ -1,42 +1,40 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Silsilah {
-	protected:
-		string orangtua = "albert wijaya dan jemy lim";
-		string anakanak = "agatha wijaya dan jonathan wijaya";
-		
-		public:
-			String cekSilsilah(){
-				return "ayah bernama Albert Wijaya dan ibu bernama Jenny Lim";
-				
-			}
-			
+protected:
+    string orangtua = "Albert Wijaya dan Jenny Lim";
+    string anakanak = "Agatha Wijaya dan Jonathan Wijaya";
+
+public:
+    string cekSilsilah() {
+        return "Ayah bernama " + orangtua + " dan Ibu bernama " + anakanak;
+    }
 };
 
-class Cucu: public Silsilah{
-	protected:
-	string cucu="Wilbert Tan dan Rayanza Wijaya";
-	
-	public:
-	string cekAnak(){
-		return "anak pertama keluarga Wijaya adalah agatha wijaya dan anak kedua dari keluarga Wijaya adalah jonathan wijaya"
-	} 
+class Cucu : public Silsilah {
+protected:
+    string cucu = "Wilbert Tan dan Rayanza Wijaya";
+
+public:
+    string cekAnak() {
+        return "Anak pertama keluarga Wijaya adalah " + anakanak + " dan anak kedua dari keluarga Wijaya adalah " + orangtua;
+    }
 };
 
-class Anak: public Cucu{
-	public:
-		string lihatSilsilahnya(){
-			return "silsilah keluarga wijaya";
-		}
+class Anak : public Cucu {
+public:
+    string lihatSilsilahnya() {
+        return "Silsilah keluarga Wijaya";
+    }
 };
 
-int main()
-{
-	Anak silsilahWijaya;
-	cout<<silsilahWijaya.lihatSilsilahnya()<<endl;
-	cout<<silsilahWijaya.cekSilsilah()<<endl;
-	cout<<silsilahWijaya.cekAnak()<<endl;
-	cout<<silsilahWijaya.cekCucu()<<endl;
-	return 0;
+int main() {
+    Anak silsilahWijaya;
+    cout << silsilahWijaya.lihatSilsilahnya() << endl;
+    cout << silsilahWijaya.cekSilsilah() << endl;
+    cout << silsilahWijaya.cekAnak() << endl;
+    return 0;
 }
+
