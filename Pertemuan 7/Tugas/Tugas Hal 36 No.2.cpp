@@ -4,13 +4,12 @@
 
 using namespace std;
 
-// Struktur data untuk menyimpan informasi buku
+
 struct Buku {
     string judul;
     int rakNomor;
 };
 
-// Fungsi untuk mencari buku menggunakan binary search
 int temukanRakBuku(const vector<Buku>& banyakBuku, const string& judul) {
     int kiri = 0;
     int kanan = banyakBuku.size() - 1;
@@ -26,12 +25,12 @@ int temukanRakBuku(const vector<Buku>& banyakBuku, const string& judul) {
         }
     }
 
-    // Jika buku tidak ditemukan, return -1
+
     return -1;
 }
 
 int main() {
-    // Inisialisasi data buku di perpustakaan
+
     vector<Buku> perpustakaan = {
         {"Algoritma Pemrograman", 1},
         {"Struktur Data", 2},
@@ -40,15 +39,12 @@ int main() {
         {"Jaringan Komputer", 5}
     };
 
-    // Input judul buku yang ingin dicari
     string judulBuku;
     cout << "Masukkan judul buku yang ingin Anda cari: ";
     getline(cin, judulBuku);
 
-    // Melakukan pencarian menggunakan binary search
     int rakNomor = temukanRakBuku(perpustakaan, judulBuku);
 
-    // Menampilkan hasil pencarian
     if (rakNomor != -1) {
         cout << "Buku dengan judul \"" << judulBuku << "\" berada di rak nomor " << rakNomor << endl;
     } else {
